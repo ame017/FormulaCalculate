@@ -12,5 +12,6 @@
 
 @property (nonatomic, copy) NSString * varName;
 @property (nonatomic, assign) double varValue;
+@property (nonatomic, assign) BOOL isValuation;
 
 @end

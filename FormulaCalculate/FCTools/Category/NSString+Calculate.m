@@ -11,7 +11,7 @@
 @implementation NSString (Calculate)
 
 - (BOOL)fc_isOperator{
-    if ([self isEqualToString:@"+"] || [self isEqualToString:@"-"] || [self isEqualToString:@"*"] || [self isEqualToString:@"/"]  || [self isEqualToString:@"("]  || [self isEqualToString:@")"]) {
+    if ([self isEqualToString:@"+"] || [self isEqualToString:@"-"] || [self isEqualToString:@"*"] || [self isEqualToString:@"/"]) {
         return YES;
     }
     return NO;

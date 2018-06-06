@@ -26,5 +26,10 @@
     }
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [[IQKeyboardManager sharedManager]goNext];
+    return YES;
+}
+
 
 @end

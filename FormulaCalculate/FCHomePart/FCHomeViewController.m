@@ -19,7 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+//    NSLog(@"ans = %lf",[[FCCalculater share]fc_singleCalculate:@"[3]+[3]*[5]/[7]+[6]/[4]"]);
+//    NSLog(@"string = %@",[[FCCalculater share]fc_removeParenthesis:@"[3]+[4]+[5]*(([4]-[3])*[6])"]);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,6 +48,20 @@
         FCCalculateViewController * vc = (FCCalculateViewController *)segue.destinationViewController;
         vc.formulaString = self.formulaTextField.text;
     }
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
+    if ([identifier isEqualToString:@"pushToCalculate"]) {
+        if ([[FCCalculater share]fc_checkFormla:self.formulaTextField.text]) {
+            return YES;
+        }else{
+            [UIAlertController okAlertWithMessage:@"公式格式有误，请检查" okEvent:^{
+                
+            } isShow:YES];
+            return NO;
+        }
+    }
+    return YES;
 }
 
 

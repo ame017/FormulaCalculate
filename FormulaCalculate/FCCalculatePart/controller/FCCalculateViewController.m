@@ -32,7 +32,29 @@
 }
 #pragma mark - buttonClick
 - (IBAction)calculateButtonClick:(id)sender {
-    
+    for (FCCalculateCellModel * model in self.varArray) {
+        if (model.isValuation == NO) {
+            [UIAlertController okAlertWithMessage:@"有尚未赋值的变量" okEvent:^{
+                
+            } isShow:YES];
+            return;
+        }
+    }
+    NSString * calculateString = [self.calculater fc_makeCalculateString:self.varArray formula:self.formulaString];
+    self.headView.nowEquation = calculateString;
+    double ans = [self.calculater fc_calculateWithString:calculateString];
+    self.headView.answer = [self.calculater fc_doubleToString:ans];
+}
+#pragma mark - cellDelegate
+- (void)fc_calculateCellDidEndEditing:(FCCalculateCell *)cell{
+    if (![cell.varTextField.text ame_isPureFloat]) {
+        [SVProgressHUD showErrorWithStatus:@"输入有误"];
+        cell.varTextField.text = @"";
+    }else{
+        NSInteger row = [self.mainTable indexPathForCell:cell].row;
+        self.varArray[row].varValue = cell.varTextField.text.doubleValue;
+        self.varArray[row].isValuation = YES;
+    }
 }
 
 #pragma mark - tableView
