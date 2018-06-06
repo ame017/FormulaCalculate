@@ -1,0 +1,36 @@
+PODS:
+  - FDFullscreenPopGesture (1.1)
+  - IQKeyboardManager (5.0.8)
+  - Masonry (1.1.0)
+  - MJExtension (3.0.15)
+  - MJRefresh (3.1.15.3)
+  - SVProgressHUD (2.2.5)
+
+DEPENDENCIES:
+  - FDFullscreenPopGesture (= 1.1)
+  - IQKeyboardManager (~> 5.0.3)
+  - Masonry (~> 1.1.0)
+  - MJExtension (~> 3.0.13)
+  - MJRefresh (~> 3.1.14)
+  - SVProgressHUD (~> 2.2.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FDFullscreenPopGesture
+    - IQKeyboardManager
+    - Masonry
+    - MJExtension
+    - MJRefresh
+    - SVProgressHUD
+
+SPEC CHECKSUMS:
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  IQKeyboardManager: 266cb7b1d11f94a3e71229d77f960f9a1b538e5b
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: 3f039575db1b135a20699ad298713b26acec1528
+  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+
+PODFILE CHECKSUM: 3d9f23618ea968f49296fdf9e264603a3b0fdc6d
+
+COCOAPODS: 1.5.3
